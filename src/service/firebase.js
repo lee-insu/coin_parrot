@@ -12,6 +12,11 @@ const firebaseConfig = {
     appId: process.env.FIREBASE_REACT_APP_APP_ID,
     measurementId:process.env.FIREBASE_REACT_APP_ANY_ID 
   };
-  // Initialize Firebase
+
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  
+  const firebaseAuth = new firebase.auth();
+  const firestore = new firebase.firestore();
+  const user = firebaseAuth.currentUser;
+
+  export {firebaseAuth, firestore, user };
