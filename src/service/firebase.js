@@ -14,4 +14,10 @@ const firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+
+  
+  const firebaseAuth = new firebase.auth();
+  const firestore = new firebase.firestore();
+  const user = firebaseAuth.currentUser;
+
+  export {firebaseAuth, firestore, user };
