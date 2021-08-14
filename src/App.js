@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Board from './components/board/board';
+import BoardWrite from './components/board/board_write/board_write';
 import CoinInfo from './components/coin_info/coin_info';
 import Header from './components/header/header';
 import SignIn from './components/header/sign_in/sign_in';
@@ -34,7 +36,8 @@ function App() {
           <Route exact path ='/' component={CoinInfo}/>
           <Route exact path ='/signin' component={SignIn}/>
           <Route exact path ='/signup' component={SignUp}/>
-
+          <Route exact path ='/board' component={()=><Board login={login}/>}/>
+          <Route exact path ='/board/write' component={()=><BoardWrite userInfo={userInfo}/>}/>
       </Switch>
     </BrowserRouter>
   );

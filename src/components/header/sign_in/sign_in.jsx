@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { firebaseAuth } from '../../../service/firebase';
 import firebase from 'firebase/app';
 
@@ -77,7 +77,7 @@ const SignIn = () => {
             value="로그인"
             />
         </form>
-
+        <div><Link to='/signup'>아직 회원이 아니신가요?</Link></div>
         <button onClick={googleSignIn}>구글로 로그인하기</button>
         </>
     )
