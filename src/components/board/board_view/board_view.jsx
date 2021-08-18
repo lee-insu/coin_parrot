@@ -3,6 +3,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { firestore } from '../../../service/firebase';
 import firebase from 'firebase/app';
 import Comment from './comment/comment';
+import Like from './like/like';
 
 const BoardView = ({login, userInfo}) => {
 
@@ -107,6 +108,7 @@ const BoardView = ({login, userInfo}) => {
             <button onClick={onDelete}>삭제하기</button> 
             </>:
              null }
+             <Like login={login} userInfo={userDoc}/>
             <Comment params = {params.id} userInfo = {userDoc} />
         </div>
         

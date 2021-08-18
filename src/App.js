@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Board from './components/board/board';
+import BoardEdit from './components/board/board_view/board_edit/board_edit';
 import BoardView from './components/board/board_view/board_view';
 import BoardWrite from './components/board/board_write/board_write';
 import CoinInfo from './components/coin_info/coin_info';
@@ -39,7 +40,8 @@ function App() {
           <Route exact path ='/signup' component={SignUp}/>
           <Route exact path ='/board' component={()=><Board login={login}/>}/>
           <Route exact path ='/board/write' component={()=><BoardWrite userInfo={userInfo}/>}/>
-  <Route exact path = '/board/:id'  component={()=><BoardView login={login} userInfo={userInfo}/>}/>
+          <Route exact path = '/board/:id'  component={()=><BoardView login={login} userInfo={userInfo}/>}/>
+          <Route exact path ='/board/:id/edit' component={BoardEdit}/>
       </Switch>
     </BrowserRouter>
   );
