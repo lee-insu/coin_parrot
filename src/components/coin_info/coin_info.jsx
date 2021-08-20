@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import CoinChart from './coin_chart/coin_chart';
+import CoinRoulette from './coin_roulette/coin_roulette';
 import CoinSelect from './coin_select/coin_select';
 
 const CoinInfo = () => {
@@ -23,6 +25,8 @@ const CoinInfo = () => {
     return (
         <>
         <CoinSelect coins ={coins}/>
+        <CoinChart />
+        <CoinRoulette />
         </>
     );
 };

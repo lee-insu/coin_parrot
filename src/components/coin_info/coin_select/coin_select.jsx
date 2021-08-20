@@ -61,7 +61,7 @@ const CoinSelect = ({coins}) => {
               <>
                 <div>{coin}</div>
                 <div>{price}원</div>
-                <div>{changeRate}</div>
+                <div>{changeRate}%</div>
                 </>
             :null}
         </>
