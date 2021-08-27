@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { firestore } from '../../../../service/firebase';
+import style from './board_edit.module.css';
 
 const BoardEdit = () => {
 
@@ -47,8 +48,10 @@ const BoardEdit = () => {
 
 
     return (
-       <form onSubmit={onSubmit}>
+      <div clssName={style.session}>
+         <form className={style.form} onSubmit={onSubmit}>
            <input 
+           className={style.title}
            type="text"
            name="title"
            value={title}
@@ -56,14 +59,16 @@ const BoardEdit = () => {
            />
 
            <input 
+           className={style.content}
            type="text"
            name="content"
            value={content}
            onChange={onChange}
            />
 
-           <input type="submit" value="수정"/>
-       </form>
+            <input className = {style.btn} type="submit" value="수정"/>
+        </form>
+       </div>
     );
 };
 

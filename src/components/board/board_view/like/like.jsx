@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { firestore } from '../../../../service/firebase';
+import style from './like.module.css';
 
 const Like = ({login,userInfo}) => {
 
@@ -53,9 +54,13 @@ const Like = ({login,userInfo}) => {
 
     return (
         <div>
-            <button onClick={increaseLike}>좋아요</button>
-             <div>좋아요 수:{likeNum}</div>
-             {like ? <div>true</div>:<div>false</div>}
+             <div className={style.like_num}>좋아요 수:{likeNum}</div>
+             {like ? 
+             <button className={style.true} onClick={increaseLike}>좋아요</button>
+             :
+             <button className={style.false} onClick={increaseLike}>좋아요</button>
+             }
+             
         </div>
     );
 };

@@ -1,0 +1,90 @@
+
+.session {
+    height: 100%;
+}
+
+.img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.img > img {
+    width:30%;
+}
+
+.content {
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+
+}
+
+
+.content > div {
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.coin {
+    font-family: 'GongGothicMedium';
+    font-size: 2.3rem;
+    color: #5797FF;
+}
+
+.price {
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1rem;
+    color:rgb(95, 95, 95);
+    margin-bottom: 3px;
+}
+
+.changeRate {
+    color:rgb(250, 78, 35);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.changeRate_u {
+    color:rgb(57, 35, 250);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.button {
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    border: solid 0px;
+    background-color: #5797FF;
+    padding: 0.3rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    
+    .content > div {
+        font-size: 1.2rem;
+    }
+
+    .img > img {
+        width:35%;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .content > div {
+        font-size: 1.2rem;
+    }
+
+    .img > img {
+        width:55%;
+    }
+
+}

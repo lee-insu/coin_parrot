@@ -1,0 +1,91 @@
+.session {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+
+.ad {
+  
+        width: 100%;
+        height: 80px;
+        background-color: rgb(119, 119, 119);
+
+}
+
+
+.title {
+    width: 100%;
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    
+}
+
+.content_info {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.content {
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.time {
+    font-size: 0.8rem;
+}
+
+.user_info {
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    display: flex;
+}
+
+.name {
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.time {
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+
+}
+
+.views {
+    font-size: 0.9rem;
+}
+
+.content {
+    margin-top: 1rem;
+    font-size: 1rem;
+    border: solid 0px;
+    border-radius: 6px;
+    background-color: rgb(235, 235, 235);
+    min-height: 20vh;
+    padding: 0.5rem 0rem 0rem 0.3rem;
+}
+
+.edit {
+    border: none;
+    font: 1rem;
+    background-color: #fff;
+    color: rgb(82, 82, 82);
+}
+
+.delete {
+    border: none;
+    border-left: solid 1px rgb(82, 82, 82);
+    font: 1rem;
+    background-color: #fff;
+    color: rgb(82, 82, 82);
+}

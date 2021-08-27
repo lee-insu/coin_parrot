@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { firestore } from '../../service/firebase';
+import style from './board.module.css';
+import BoardSearch from './board_search/board_search';
 
 const Board = ({login}) => {
 
@@ -65,21 +67,26 @@ const Board = ({login}) => {
 
 
     const boards = board.map(bd => 
-    <li key={bd.id}>
+    <li className={style.li} key={bd.id}>
         <Link to={`/board/${bd.id}`}>
-            <h3>{bd.title}</h3>
+            <div className={style.title}>{bd.title}</div>
         </Link>
-        <h4>{bd.content}</h4>
+        <div className={style.content}>{bd.content}</div>
     </li>
     )
+
     
     return (
-        <>
+        <div className={style.session}>
+        <div className={style.ad}>ad</div>
         <ul>{boards}</ul>
-        {loading ? <h3>글을 불러오고 있습니다..</h3> : null}
-        {isEmpty ? <h3>불러올 글이 없습니다</h3>:<button onClick={fetchMore}>더보기</button>}
-        <button onClick={boardWrite}>글쓰기</button>
-        </>
+        {loading ? <div className={style.more}>글을 불러오고 있습니다..</div> : null}
+        {isEmpty ? <div className={style.more}>불러올 글이 없습니다</div>:<button className={style.more_btn} onClick={fetchMore}>더보기</button>}
+        <div>
+        <button className={style.write} onClick={boardWrite}>글쓰기</button>
+        </div>
+        <BoardSearch />
+        </div>
     )
 }
 

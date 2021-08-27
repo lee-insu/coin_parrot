@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './App.css';
+import styles from './App.module.css';
 import Board from './components/board/board';
 import BoardEdit from './components/board/board_view/board_edit/board_edit';
 import BoardView from './components/board/board_view/board_view';
@@ -32,10 +32,11 @@ function App() {
   },[])
 
   return (
+    <div className={styles.app}>
     <BrowserRouter>
     <Header login = {login} userInfo={userInfo}/>
       <Switch>
-          <Route exact path ='/' component={CoinInfo}/>
+        <Route exact path ='/' component={CoinInfo}/>
           <Route exact path ='/signin' component={SignIn}/>
           <Route exact path ='/signup' component={SignUp}/>
           <Route exact path ='/board' component={()=><Board login={login}/>}/>
@@ -44,6 +45,7 @@ function App() {
           <Route exact path ='/board/:id/edit' component={BoardEdit}/>
       </Switch>
     </BrowserRouter>
+    </div>
   );
 }
 

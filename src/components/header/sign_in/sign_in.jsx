@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { firebaseAuth } from '../../../service/firebase';
 import firebase from 'firebase/app';
+import style from './sign_in.module.css';
 
 const SignIn = () => {
 
@@ -54,18 +55,21 @@ const SignIn = () => {
 
 
     return (
-        <>
-        <form onSubmit={onSubmit}>
-
+        <div className={style.session}>
+        <div className={style.title}>로그인</div>
+        <form className={style.form} onSubmit={onSubmit}>
+            <div className={style.email}>이메일</div>
             <input 
+            className={style.input}
             type="text"
             name="email"
             value={email}
             onChange={onChange}
             placeholder="이메일을 적어주세요"
             />
-
+            <div className={style.password}>비밀번호</div>
             <input 
+            className={style.input}
             type="password"
             name="password"
             value={password}
@@ -73,13 +77,15 @@ const SignIn = () => {
             placeholder="비밀번호를 적어주세요"
             />
 
-            <input type="submit" 
+            <input 
+            className={style.button}
+            type="submit" 
             value="로그인"
             />
         </form>
-        <div><Link to='/signup'>아직 회원이 아니신가요?</Link></div>
-        <button onClick={googleSignIn}>구글로 로그인하기</button>
-        </>
+        <button className={style.google} onClick={googleSignIn}>구글로 로그인</button>
+        <div className={style.signup}><Link to='/signup'>아직 회원이 아니신가요?</Link></div>
+        </div>
     )
 }
 

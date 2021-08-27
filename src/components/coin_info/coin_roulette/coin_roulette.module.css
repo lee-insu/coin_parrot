@@ -1,0 +1,83 @@
+.title {
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: left;
+    margin-left: 1rem;
+}
+
+.write {
+    margin: 0 auto;
+    margin-top: 1.2rem;
+    width: 50%;
+    display:flex;
+    flex-direction: column;
+}
+
+.write > input {
+    margin-bottom: 1rem;
+    text-align: center;
+    border: solid 2px rgb(122, 122, 122);
+    border-radius: 3px;
+    padding: 0.15rem;
+}
+
+.button {
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #fff;
+    width: 25%;
+    border: solid 0px ;
+    background-color: #5797FF;
+    padding: 0.2rem 0 0.2rem 0;
+    border-radius: 6px;
+}
+
+.roulette {
+    width: 60%;
+    position: relative;
+    margin: 1rem auto;
+    overflow: hidden;
+}
+
+.roulette > div {
+
+    display: flex;
+    justify-content: center;
+}
+
+.option {
+    font-family: 'GongGothicMedium';
+    font-size: 1.5rem;
+    color: #363636;
+}
+
+.button_roulette {
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.9rem;
+    width: 25%;
+    background-color: #9e9e9e;
+    margin-right:1rem ;
+    border: solid 0px ;
+    padding: 0.2rem 0 0.2rem 0;
+    border-radius: 6px;
+}
+
+
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .roulette{
+        width: 85%;
+    }
+
+
+}
+

@@ -1,0 +1,67 @@
+.session {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.li {
+    border: solid 0px;
+    background-color: rgb(240, 240, 240);
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    display: flex;
+    min-height: 5vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment_info {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.user_info {
+    display: flex;
+    margin-top: 0.8rem;
+    margin-left: 0.2rem;
+}
+
+.user_info > div {
+    font-size: 0.8rem;
+    color: rgb(68, 68, 68);
+}
+
+.comment {
+    font-size: 0.9rem;
+}
+.name {
+  margin-right: 0.3rem;
+}
+
+
+.delete {
+    border: none;
+    font-size: 1rem;
+    padding-right: 1rem;
+    color:rgb(116, 116, 116)
+}
+
+.form {
+    width: 100%;
+    text-align: center;
+}
+
+.input {
+    width: auto;
+    border: solid 1px rgb(189, 189, 189);
+    border-radius: 6px;
+    padding: 0.3rem 2rem;
+    margin-right: 0.3rem;
+}
+
+.submit {
+    border: solid 0px;
+    background-color:#c9c9c9;
+    padding: 0.3rem 0.4rem;
+    border-radius: 3px;
+    color:#fff;
+}

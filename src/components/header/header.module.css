@@ -1,0 +1,243 @@
+.nav {
+    width: 100%;
+    display: flex;
+    height: 50px;
+}
+
+.align {
+    width: 100%;
+    display: flex;
+
+
+}
+
+.logo{
+    width: 100%;
+    height: 50%;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 3rem;
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.ul_menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0;
+    align-items: center;
+}
+
+.ul_menu > li {
+    list-style: none;
+    padding-right: 2rem;
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1rem;
+    color: #707070;
+}
+
+.ul_sign {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2rem;
+    
+}
+
+.ul_sign > li {
+    list-style: none;
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1rem;
+    color: #707070;
+    margin-right: 2rem;
+}
+.ul_sign > li:nth-child(2){
+    list-style: none;
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1rem;
+    color:#fff;
+    border: solid 0px;
+    background-color: #5797ff;
+    border-radius: 6px;
+    padding: 0.4rem;
+}
+
+.login {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2rem;
+    
+    
+}
+
+.name {
+    margin-right: 2rem;
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.logout {
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1rem;
+    color:#fff;
+    border: solid 0px;
+    background-color: #5797ff;
+    border-radius: 6px;
+    padding: 0.4rem;
+
+
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+
+    .nav {
+        height: 85px;
+    }
+
+    .align {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: inline;
+        margin-left: 1rem;
+    }
+
+    .logo{
+        width: 100%;
+        height: 50%;
+        display: inline-block;
+        margin-top: 1.4rem;
+        margin-right: 3rem;
+        font-family: 'nanum gothic';
+        font-weight: bold;
+        font-size: 1.8rem;
+    }
+
+    .ul_menu {
+        width: 100%;
+        height: auto;
+        display: flex;
+        margin: 0;
+        position: relative;
+        bottom: 0rem;
+    }
+
+    .ul_sign {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        margin: 0;
+        justify-content: flex-end;
+        padding-right: 0rem;
+    }
+
+    .ul_sign > li {
+        list-style: none;
+        font-family: 'nanum gothic';
+        font-weight: bold;
+        font-size: 1rem;
+        color:#fff;
+        border: solid 0px;
+        background-color: #5797ff;
+        border-radius: 6px;
+        padding: 0.4rem;
+    }
+
+    .ul_sign > li:nth-child(2){
+        display: none;
+    }
+
+
+
+}
+
+
+@media screen  and (max-width: 480px) {
+
+
+    .nav {
+        height: 85px;
+    }
+
+    .align {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: inline;
+        margin-left: 0.3rem;
+    }
+    
+    .logo{
+        width: 100%;
+        height: 50%;
+        display: inline-block;
+        margin-top: 1.6rem;
+        margin-right: 3rem;
+        font-family: 'nanum gothic';
+        font-weight: bold;
+        font-size: 1.8rem;
+    }
+
+    .ul_menu {
+        width: 100%;
+        height: auto;
+        display: flex;
+        margin: 0;
+        position: relative;
+        bottom: 0rem;
+    }
+
+    .login {
+        padding-right: 0.3rem;
+    }
+    
+    .logout {
+        font-family: 'nanum gothic';
+        font-weight: bold;
+        font-size: 1rem;
+        color:#000;
+        border: solid 0px;
+        background-color: #fff;
+        border-radius: 0px;
+        padding: 0;
+    }
+
+    .ul_sign {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        margin: 0;
+        justify-content: flex-end;
+        padding-right: 0rem;
+    }
+
+    .ul_sign > li {
+        list-style: none;
+        font-family: 'nanum gothic';
+        font-weight: bold;
+        font-size: 1rem;
+        color:#fff;
+        border: solid 0px;
+        background-color: #5797ff;
+        border-radius: 6px;
+        padding: 0.4rem;
+    }
+
+    .ul_sign > li:nth-child(2){
+        display: none;
+    }
+
+}

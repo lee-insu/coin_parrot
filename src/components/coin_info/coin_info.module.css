@@ -1,0 +1,49 @@
+.session {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.coin_select {
+    position: relative;
+    width: 100%;
+    height: 55vh;
+}
+
+.coin_roulette {
+    position: relative;
+    height: auto;
+    margin: 1rem 0rem;
+}
+
+.coin_chart {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+.ad {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(119, 119, 119);
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .coin_select {
+        height: auto;
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .coin_select {
+        height: 50vh;
+
+    }
+
+    }
+
+

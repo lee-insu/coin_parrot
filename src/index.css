@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "nanum gothic";
+  font-weight: normal;
+  src: url(./common/font/NanumGothicCoding.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "nanum gothic";
+  font-weight: bold;
+  src: url(./common/font/NanumGothicCoding-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'GongGothicMedium';
+  src: url('./common/font/esamanru\ Medium.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+

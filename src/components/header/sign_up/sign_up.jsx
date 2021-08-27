@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { firebaseAuth, firestore } from '../../../service/firebase';
+import style from './sign_up.module.css';
 
 const SignUp = () => {  
 
@@ -50,8 +51,13 @@ const SignUp = () => {
 
 
     return (
-        <form onSubmit={onSubmit}>
+
+        <div className={style.session}>
+        <div className={style.title}>회원가입</div>
+        <form className={style.form} onSubmit={onSubmit}>
+            <div className={style.inputTag}>이메일</div>
             <input 
+            className={style.input}
             type="text"
             name="email"
             value={email}
@@ -60,7 +66,9 @@ const SignUp = () => {
             required
             />
 
+            <div className={style.inputTag}>패스워드</div>
             <input 
+            className={style.input}
             type="password"
             name="password"
             value={password}
@@ -69,7 +77,9 @@ const SignUp = () => {
             required
             />
 
+            <div className={style.inputTag}>닉네임</div>
             <input 
+            className={style.input}
             type="text"
             name="nickname"
             value={nickname}
@@ -79,10 +89,12 @@ const SignUp = () => {
             />
 
             <input 
+            className={style.button}
             type="submit" 
             value="가입하기"
             />
         </form>
+        </div>
     )
 }
 

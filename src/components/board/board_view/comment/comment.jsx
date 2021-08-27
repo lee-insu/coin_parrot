@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { firestore } from '../../../../service/firebase';
+import style from './comment.module.css';
 
 const Comment = ({params,userInfo}) => {
 
@@ -57,31 +58,38 @@ const Comment = ({params,userInfo}) => {
 
 
     const cmts = comments.map(comment => 
-        <li key={comment.id}>
-            <div>{comment.comment}</div>
-            <div>작성자{comment.name}</div>
-            <button onClick={()=>onDelete(comment.id,comment.uid)}>삭제</button>
+        <li className={style.li} key={comment.id}>
+                <div className={style.comment_info}>
+                    <div className={style.comment}>{comment.comment}</div>
+                    <div className={style.user_info}>
+                        <div className={style.name}>{comment.name}님</div>
+                        <div className={style.time}>2020.09.94</div>
+                    </div> 
+                </div>
+                 <button className={style.delete} 
+                 onClick={()=>onDelete(comment.id,comment.uid)}>x</button>
         </li>
         )
  
 
     return (
-        <>
-        <ul>
+        <div className={style.session}>
+        <ul className={style.ul}> 
             {cmts}
         </ul>
 
-        <form onSubmit = {onSubmit}>
+        <form className={style.form} onSubmit = {onSubmit}>
             <input 
+            className={style.input}
             type="text"
             value={write}
             onChange={onChange}
             placeholder="댓글을 적어주세요"
             required
             />
-            <input type="submit" value="올리기"/>
+            <input className={style.submit} type="submit" value="올리기"/>
         </form>
-        </>
+        </div>
     );
 };
 

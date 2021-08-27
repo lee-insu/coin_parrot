@@ -4,6 +4,7 @@ import { firestore } from '../../../service/firebase';
 import firebase from 'firebase/app';
 import Comment from './comment/comment';
 import Like from './like/like';
+import style from './board_view.module.css';
 
 const BoardView = ({login, userInfo}) => {
 
@@ -95,21 +96,30 @@ const BoardView = ({login, userInfo}) => {
 
     return(
 
-        <div>
-            <div>{title}</div>
-            <div>{content}</div>
-            <div>{time.year}년 {time.mon}월 {time.date}일</div>
-            <div>{user.name}님 {user.uid}</div>
-            <div>{views}</div>
+        <div className={style.session}>
+            <div className={style.ad}>ad</div>
+            <div className={style.content_info}>
+                 <div className={style.title}>{title}</div>
+                 <div className={style.user_info}>
+                 <div className={style.info}>
+                     <div className={style.name}>{user.name}님 </div>
+                     <div className={style.time}>{time.year}년 {time.mon}월 {time.date}일</div>
+                 </div>
+                      <div className={style.views}>조회수:{views}</div>
+                </div>
+            <div className={style.content}>{content}</div>
+            
+            
             
             {login && userInfo.uid === user.uid ? 
             <>
-            <button onClick={onEdit}>수정하기</button>
-            <button onClick={onDelete}>삭제하기</button> 
+            <button className={style.edit} onClick={onEdit}>수정하기</button> 
+            <button className={style.delete} onClick={onDelete}>삭제하기</button> 
             </>:
              null }
              <Like login={login} userInfo={userDoc}/>
             <Comment params = {params.id} userInfo = {userDoc} />
+            </div>
         </div>
         
     )

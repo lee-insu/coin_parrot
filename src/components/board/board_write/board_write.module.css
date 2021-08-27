@@ -1,0 +1,49 @@
+.session {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.form {
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.title {
+    width: 100%;
+    border: solid 0px;
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    border-radius: 6px;
+    color: rgb(94, 94, 94);
+    background-color: rgb(243, 243, 243);
+}
+
+.content {
+     width: 100%;
+     height: 50vh;
+     font-size: 1rem;
+     color: rgb(94, 94, 94);
+     border: solid 0px;
+     text-align: start;
+     padding: 0.5rem 0;
+    border-radius: 6px;
+    color: rgb(94, 94, 94);
+    background-color: rgb(243, 243, 243);
+    margin-top: 0.5rem;
+     
+}
+.btn {
+    width: 100%;
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    color: #fff;
+    border: solid 0px; 
+    background-color: #5797FF;
+    border-radius: 6px;
+    margin-top: 1rem;
+}

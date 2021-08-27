@@ -1,0 +1,21 @@
+.form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.search {
+    width: 60%;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    border: soild 1px rgb(117, 117, 117);
+    margin-right: 0.5rem;
+}
+
+.btn {
+    border: solid 0px;
+    background-color: #c9c9c9;
+    padding: 0.3rem;
+    color: #fff;
+    border-radius: 3px;
+}
+

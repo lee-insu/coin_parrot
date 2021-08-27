@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { firestore } from '../../../service/firebase';
+import style from './board_write.module.css';
 
 const BoardWrite = ({userInfo}) => {
     
@@ -41,16 +42,20 @@ const BoardWrite = ({userInfo}) => {
  
 
     return (
-        <form onSubmit={onSubmit}>
+     <div className={style.session}>
+        <form className = {style.form} onSubmit={onSubmit}>
+           
             <input 
+            className={style.title}
             type="text"
             name="title"
             value={title}
             onChange={onChange}
-            placeholder="제목을 적어주세요"
+            placeholder="제목"
             required
             />
             <input 
+            className={style.content}
             type="text"
             name="content"
             value={content}
@@ -58,8 +63,9 @@ const BoardWrite = ({userInfo}) => {
             placeholder="내용을 적어주세요"
             required
             />
-            <input type="submit" value="올리기" />
+            <input className = {style.btn} type="submit" value="올리기" />
         </form>
+       </div>
     );
 };
 

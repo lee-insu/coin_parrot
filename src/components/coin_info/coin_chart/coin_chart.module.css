@@ -1,0 +1,27 @@
+.table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+
+}
+
+.thead_tr > th {
+    font-family: 'nanum gothic';
+    font-weight: bold;
+}
+
+
+.tbody > tr > th {
+    font-family: 'nanum gothic';
+    font-weight: normal;
+  
+}
+
+.changeRate {
+    color: rgb(250, 78, 35);
+}
+
+.changeRate_u {
+    color:rgb(57, 35, 250);
+}

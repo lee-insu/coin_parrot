@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CoinChart from './coin_chart/coin_chart';
 import CoinRoulette from './coin_roulette/coin_roulette';
 import CoinSelect from './coin_select/coin_select';
+import styles from './coin_info.module.css';
 
 const CoinInfo = () => {
 
@@ -23,11 +24,14 @@ const CoinInfo = () => {
 
 
     return (
-        <>
-        <CoinSelect coins ={coins}/>
-        <CoinChart />
-        <CoinRoulette />
-        </>
+        <div className={styles.session}>
+        <div className={styles.coin_select}><CoinSelect coins ={coins}/></div>
+        <div className={styles.ad}>ad</div>
+        <div className={styles.coin_roulette}><CoinRoulette /></div>
+        <div className={styles.ad}>ad</div>
+        <div className={styles.coin_chart}> <CoinChart /></div>
+
+        </div>
     );
 };
 
