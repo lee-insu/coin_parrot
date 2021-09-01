@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './coin_select.module.css';
+import ReactGA from 'react-ga';
 
 const CoinSelect = ({coins}) => {
 
@@ -11,6 +12,12 @@ const CoinSelect = ({coins}) => {
     const [result,setResult] =useState(false);
 
     const CoinSelected = () => {
+
+        ReactGA.event({
+            category: 'coin',
+            action: 'click',
+            lael:'coin selected'
+          });
 
         const setCoin = () => {
             coinSelect(null);

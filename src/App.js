@@ -11,6 +11,7 @@ import Header from './components/header/header';
 import SignIn from './components/header/sign_in/sign_in';
 import SignUp from './components/header/sign_up/sign_up';
 import { firebaseAuth } from './service/firebase';
+import ReactGA from 'react-ga';
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
 
 
   useEffect(()=> {
+      ReactGA.initialize(process.env.REACT_APP_GA);
+      ReactGA.pageview(window.location.pathname + window.location.search);
+   
 
       firebaseAuth.onAuthStateChanged(user => {
         if(user) {
@@ -35,8 +39,9 @@ function App() {
   },[])
 
   return (
+
     <div className={styles.app}>
-    <BrowserRouter>
+    <BrowserRouter >
     <Header login = {login} userInfo={userInfo}/>
       <Switch>
         <Route exact path ='/' component={CoinInfo}/>

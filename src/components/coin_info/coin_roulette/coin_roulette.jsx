@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Wheel } from 'react-custom-roulette';
 import styles from './coin_roulette.module.css';
+import ReactGA from 'react-ga';
 
 
 const CoinRoulette = () => {
@@ -22,6 +23,12 @@ const CoinRoulette = () => {
       const [prizeNumber, setPrizeNumber] = useState(0);
     
       const handleSpinClick = () => {
+        ReactGA.event({
+            category: 'roulette',
+            action: 'click',
+            label: 'roulette spin click'
+          });
+
         const newPrizeNumber = Math.floor(Math.random() * data.length)
         setPrizeNumber(newPrizeNumber)
         setMustSpin(true)

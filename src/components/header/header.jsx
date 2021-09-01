@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './header.module.css';
 import { Link } from 'react-router-dom';
 import { firebaseAuth } from '../../service/firebase';
+import ReactGA from 'react-ga';
 
 
 const Header = ({login,userInfo}) => {
@@ -9,6 +10,14 @@ const Header = ({login,userInfo}) => {
     const logout = () => {
         firebaseAuth.signOut();
         window.location.replace("/")
+    }
+
+    const board = () => {
+        ReactGA.event({
+            category: 'board',
+            action: 'click',
+            lael:'board page'
+          });
     }
 
  
@@ -20,7 +29,7 @@ const Header = ({login,userInfo}) => {
             <div className={styles.logo}><Link to='/'>코인앵무새</Link></div>
             <ul className={styles.ul_menu}>
                 <li><Link to='/'>홈</Link></li>
-                <li><Link to='/board'>코인토론</Link></li>
+                <li onClick={board}><Link to='/board'>코인토론</Link></li>
             </ul>
             </div>
             {login ?
