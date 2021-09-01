@@ -15,11 +15,13 @@
     width: 100%;
     height: 50%;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 7px;
+    margin-left: 1rem;
     margin-right: 3rem;
-    font-family: 'nanum gothic';
+    font-family: 'cookierun';
     font-weight: bold;
     font-size: 1.8rem;
+    color: #166fff;
 }
 
 .ul_menu {
@@ -54,15 +56,14 @@
     list-style: none;
     font-family: 'nanum gothic';
     font-weight: bold;
-    font-size: 1rem;
     color: #707070;
     margin-right: 2rem;
 }
+
 .ul_sign > li:nth-child(2){
     list-style: none;
     font-family: 'nanum gothic';
     font-weight: bold;
-    font-size: 1rem;
     color:#fff;
     border: solid 0px;
     background-color: #5797ff;
@@ -87,17 +88,11 @@
     font-size: 1rem;
 }
 
-.logout {
-    font-family: 'nanum gothic';
-    font-weight: bold;
-    font-size: 1rem;
-    color:#fff;
-    border: solid 0px;
-    background-color: #5797ff;
-    border-radius: 6px;
-    padding: 0.4rem;
 
 
+.log_img {
+    width: 2rem;
+    cursor: pointer;
 }
 
 
@@ -119,11 +114,13 @@
         width: 100%;
         height: 50%;
         display: inline-block;
-        margin-top: 1.4rem;
+        margin-top: 7px;
+        margin-left: 1rem;
         margin-right: 3rem;
-        font-family: 'nanum gothic';
+        font-family: 'cookierun';
         font-weight: bold;
         font-size: 1.8rem;
+        color: #166fff;
     }
 
     .ul_menu {
@@ -180,14 +177,14 @@
         margin-left: 0.3rem;
     }
     
+
     .logo{
         width: 100%;
         height: 50%;
         display: inline-block;
         margin-top: 1.6rem;
         margin-right: 3rem;
-        font-family: 'nanum gothic';
-        font-weight: bold;
+        margin-left: 0rem;
         font-size: 1.8rem;
     }
 
@@ -204,15 +201,8 @@
         padding-right: 0.3rem;
     }
     
-    .logout {
-        font-family: 'nanum gothic';
-        font-weight: bold;
-        font-size: 1rem;
-        color:#000;
-        border: solid 0px;
-        background-color: #fff;
-        border-radius: 0px;
-        padding: 0;
+    .log_img {
+        margin-right: 1rem;
     }
 
     .ul_sign {

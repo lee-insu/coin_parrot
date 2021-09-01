@@ -3,6 +3,7 @@ import CoinChart from './coin_chart/coin_chart';
 import CoinRoulette from './coin_roulette/coin_roulette';
 import CoinSelect from './coin_select/coin_select';
 import styles from './coin_info.module.css';
+import Footer from '../footer/footer';
 
 const CoinInfo = () => {
 
@@ -30,6 +31,7 @@ const CoinInfo = () => {
         <div className={styles.coin_roulette}><CoinRoulette /></div>
         <div className={styles.ad}>ad</div>
         <div className={styles.coin_chart}> <CoinChart /></div>
+        <Footer/>
 
         </div>
     );

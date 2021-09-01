@@ -21,10 +21,7 @@ const Comment = ({params,userInfo}) => {
                 comment:write,
                 name:userInfo.displayName,
                 uid:userInfo.uid,
-                time:new Date(),
-                year:new Date().getFullYear(),
-                month:new Date().getMonth()+1,
-                date: new Date().getDate()
+                time:`${new Date().getFullYear()}년 ${new Date().getMonth()+1}월 ${new Date().getDate()}일 ${new Date().getHours()}시 ${new Date().getMinutes()}분 `
             });
             setWrite('');
         }catch(err) {
@@ -62,8 +59,8 @@ const Comment = ({params,userInfo}) => {
                 <div className={style.comment_info}>
                     <div className={style.comment}>{comment.comment}</div>
                     <div className={style.user_info}>
-                        <div className={style.name}>{comment.name}님</div>
-                        <div className={style.time}>2020.09.94</div>
+                        <div className={style.name}>{comment.name}</div>
+                        <div className={style.time}>{comment.time}</div>
                     </div> 
                 </div>
                  <button className={style.delete} 

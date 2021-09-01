@@ -24,12 +24,12 @@ const BoardWrite = ({userInfo}) => {
         e.preventDefault();
         try{
             store.add({
-                title,
+            title,
             content,
             uid:userInfo.uid,
             name:userInfo.displayName,
             views:0,
-            time:new Date(),
+            time:`${new Date().getFullYear()}년 ${new Date().getMonth()+1}월 ${new Date().getDate()}일 ${new Date().getHours()}시 ${new Date().getMinutes()}분 `,
             year:new Date().getFullYear(),
             month:new Date().getMonth()+1,
             date: new Date().getDate()
@@ -54,7 +54,7 @@ const BoardWrite = ({userInfo}) => {
             placeholder="제목"
             required
             />
-            <input 
+            <textarea 
             className={style.content}
             type="text"
             name="content"

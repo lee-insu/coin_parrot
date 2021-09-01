@@ -16,9 +16,8 @@ const BoardView = ({login, userInfo}) => {
         uid:''
     });
     const [time,getTime] = useState({
-        year:'',
-        mon:'',
-        date:''
+        date:'',
+        update:''
     });
     const [views,getViews] = useState('');
     const params = useParams();
@@ -28,7 +27,7 @@ const BoardView = ({login, userInfo}) => {
     const comment = firestore.collection('comments').doc(`${params.id}`).collection('comment');
 
 
-
+    
     const onEdit = () => {
         if(login && userInfo.uid === user.uid) {
             try{
@@ -49,7 +48,7 @@ const BoardView = ({login, userInfo}) => {
         if(del) {
             await store.delete();
             if(del) {
-                await comment.get().then(cmt => {
+                comment.get().then(cmt => {
                     const size = cmt.size;
                     for(let i = 0; i < size; i++){
                         comment.get().then(docs => {
@@ -86,9 +85,9 @@ const BoardView = ({login, userInfo}) => {
                 uid:data.uid
             });
             getTime({
-                year:data.year,
-                mon:data.month,
-                date:data.date
+                time:data.time,
+                update:data.update
+
             });
             getViews(data.views);
         })
@@ -102,12 +101,24 @@ const BoardView = ({login, userInfo}) => {
                  <div className={style.title}>{title}</div>
                  <div className={style.user_info}>
                  <div className={style.info}>
-                     <div className={style.name}>{user.name}님 </div>
-                     <div className={style.time}>{time.year}년 {time.mon}월 {time.date}일</div>
+                     <div className={style.name}>{user.name}님</div>
+                     <div className={style.time}>{!time.update ? time.time : `${time.update}수정됨` }</div>
                  </div>
                       <div className={style.views}>조회수:{views}</div>
                 </div>
-            <div className={style.content}>{content}</div>
+                 <div className={style.content}>
+                     <div className={style.text}>
+                     {content.split('\n').map(line => {
+                         return (
+                             <span>
+                                 {line}
+                                 <br/>
+                             </span>
+                         )
+                     })}
+                    </div>
+                </div>
+      
             
             
             

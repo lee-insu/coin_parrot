@@ -10,6 +10,8 @@ const Header = ({login,userInfo}) => {
         firebaseAuth.signOut();
         window.location.replace("/")
     }
+
+ 
     
     return (
         <nav className={styles.nav}>
@@ -24,7 +26,7 @@ const Header = ({login,userInfo}) => {
             {login ?
                  <div className={styles.login}>
                  <div className={styles.name}>{userInfo.displayName}님</div>
-                 <button className={styles.logout} onClick={logout}>로그아웃</button>
+                 <img className={styles.log_img} onClick={logout} src="/static/img/logout.svg" alt="logout"/>
             </div>
             :
             <ul className={styles.ul_sign}>

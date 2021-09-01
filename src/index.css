@@ -31,4 +31,17 @@ code {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'cookierun';
+  src: url('./common/font/CookieRun\ Regular.ttf') format("truetype");
+  font-weight: normal;
+
+}
+
+@font-face {
+  font-family: 'cookierun';
+  src: url('./common/font/CookieRun\ Bold.ttf') format("truetype");
+  font-weight: bold;
+
+}
 

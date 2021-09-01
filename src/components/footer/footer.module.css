@@ -1,0 +1,22 @@
+.session {
+    width: 100%;
+    height: auto;
+    background-color: rgb(139, 139, 139);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer {
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'nanum gothic';
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 0.9rem;
+    color:rgb(36, 36, 36); 
+    line-height: 150%;
+}
+
+.p {
+    font-size: 0.7rem;
+}

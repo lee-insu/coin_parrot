@@ -16,7 +16,7 @@ import { firebaseAuth } from './service/firebase';
 function App() {
   
 
-  const [userInfo, getUserInfo] = useState();
+  const [userInfo, getUserInfo] = useState('');
   const [login, getLogin] = useState(false);
 
 

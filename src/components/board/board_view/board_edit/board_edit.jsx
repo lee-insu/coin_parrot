@@ -16,9 +16,9 @@ const BoardEdit = () => {
     const onSubmit = async(e) => {
         e.preventDefault();
         await store.update({
-            title,
-            content,
-            update:new Date()
+            title:title,
+            content:content,
+            update:`${new Date().getFullYear()}년 ${new Date().getMonth()+1}월 ${new Date().getDate()}일 ${new Date().getHours()}시 ${new Date().getMinutes()}분 `
         })
         alert('수정이 완료되었습니다.');
         history.push(`/board/${params.id}`);
@@ -29,7 +29,7 @@ const BoardEdit = () => {
 
 
     const onChange = e => {
-        const {target:{name,value}} =e;
+        const {target:{name,value}} = e;
         if(name === 'title') {
             getTitle(value);
         }else if(name === 'content') {
@@ -40,7 +40,7 @@ const BoardEdit = () => {
 
     useEffect(()=> {
         store.get().then(result => {
-            const data = result.data;
+            const data = result.data();
             getTitle(data.title);
             getContent(data.content);
         })
@@ -58,7 +58,7 @@ const BoardEdit = () => {
            onChange={onChange}
            />
 
-           <input 
+           <textarea 
            className={style.content}
            type="text"
            name="content"

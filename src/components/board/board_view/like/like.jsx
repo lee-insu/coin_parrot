@@ -14,6 +14,7 @@ const Like = ({login,userInfo}) => {
     const storeLike = firestore.collection('board').doc(`${params.id}`).collection('like');
 
     const increaseLike = async(e) => {
+        e.preventDefault();
         if (login) {
             if(!like) {
                 await store.set({
@@ -54,11 +55,11 @@ const Like = ({login,userInfo}) => {
 
     return (
         <div>
-             <div className={style.like_num}>좋아요 수:{likeNum}</div>
+             <div className={style.like_num}>모인 새모이:{likeNum}</div>
              {like ? 
-             <button className={style.true} onClick={increaseLike}>좋아요</button>
+             <button className={style.true} onClick={increaseLike}>새모이 ♥ </button>
              :
-             <button className={style.false} onClick={increaseLike}>좋아요</button>
+             <button className={style.false} onClick={increaseLike}>새모이 주기</button>
              }
              
         </div>

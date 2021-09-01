@@ -68,7 +68,13 @@ const CoinSelect = ({coins}) => {
                 <div className={changeRate >= 0 ? styles.changeRate : styles.changeRate_u}>{changeRate}%</div>
                 </>
             :null}
-            <button className={styles.button} onClick={CoinSelected}>{coin === null ? "잘 부탁드립니다":"하..한 번만 더요!"}</button>
+            {coin === null ? 
+            !loading ? 
+            <button className={styles.button} onClick={CoinSelected}>잘 부탁드립니다</button>
+            : null
+            :
+            <button className={styles.button} onClick={CoinSelected}>하..한 번만 더요!</button>
+            }
            
         </div>
     );

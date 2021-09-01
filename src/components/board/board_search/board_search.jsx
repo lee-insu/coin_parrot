@@ -5,8 +5,8 @@ import style from './board_search.module.css';
 
 const BoardSearch = () => {
     
-    const [search,setSearch] = useState();
-    const [result,getResult] = useState();
+    const [search,setSearch] = useState('');
+    const [result,getResult] = useState('');
 
     const onChange = e => {
         const value = e.target.value;
@@ -31,7 +31,7 @@ const BoardSearch = () => {
 
     return (
         <>
-        <form className={style.form} onSubmit = {onSubmit}>
+        <form className={style.form} onSubmit={onSubmit}>
             <input 
             className={style.search}
             type="text"

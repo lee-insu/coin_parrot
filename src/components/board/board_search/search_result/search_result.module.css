@@ -1,0 +1,41 @@
+.li {
+    width: 90%;
+    height: auto;
+    min-height: 7.5vh;
+    margin: 0 auto;
+    border: solid 0px;
+    background-color: #f1f1f1;
+    border-radius: 12px;
+    margin-top: 0.5rem;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;    
+}
+
+.title {
+    padding: 10px 0px 5px 10px;
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    font-size: 1rem;
+}
+.content {
+    padding: 0px 0px 8px 10px;
+    font-family: 'nanum gothic';
+    font-weight: bold;
+    color:rgb(128, 128, 128); ;
+    font-size: 0.9rem;
+}
+
+.user_info {
+    margin-top: 0.1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    font-size: 0.9rem;
+    padding-left: 10px;
+    color: rgb(88, 88, 88);
+
+}
+
+.user_info > div {
+    margin-right: 0.5rem;
+}

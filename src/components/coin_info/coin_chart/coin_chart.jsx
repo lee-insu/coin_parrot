@@ -27,7 +27,7 @@ const CoinChart = () => {
                 getDoge(array[4]);
                 getCoin(true)
             })
-        },4000)
+        },2000)
     },[])
 
 

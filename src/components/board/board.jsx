@@ -23,12 +23,8 @@ const Board = ({login}) => {
         }
     }
 
-
-
-
-
     const store = firestore.collection("board").orderBy('time','desc');
-    
+ 
 
     const onSnapshotState = snapshot => {
         const isCollectionEmpty = snapshot.size === 0;
@@ -51,7 +47,7 @@ const Board = ({login}) => {
 
     const fetchMore = () => {
         setLoading(true);
-        store.startAfter(lastDoc).limit(3)
+        store.startAfter(lastDoc).limit(15)
         .onSnapshot(snapshot =>{
             onSnapshotState(snapshot);
         })
@@ -59,7 +55,7 @@ const Board = ({login}) => {
 
 
     useEffect(()=> {
-        store.limit(3)
+        store.limit(15)
         .onSnapshot(snapshot => {
            onSnapshotState(snapshot);
         })
@@ -67,12 +63,16 @@ const Board = ({login}) => {
 
 
     const boards = board.map(bd => 
-    <li className={style.li} key={bd.id}>
         <Link to={`/board/${bd.id}`}>
+        <li className={style.li} key={bd.id}>
             <div className={style.title}>{bd.title}</div>
-        </Link>
-        <div className={style.content}>{bd.content}</div>
-    </li>
+             <div className={style.user_info}>
+                <div>{bd.name} {bd.month}-{bd.date}</div>
+                <div>조회:{bd.views}</div>
+
+            </div>
+         </li>
+       </Link>
     )
 
     
