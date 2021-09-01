@@ -21,6 +21,7 @@ function App() {
 
 
   useEffect(()=> {
+
       firebaseAuth.onAuthStateChanged(user => {
         if(user) {
           getUserInfo(user);
@@ -29,6 +30,8 @@ function App() {
           getLogin(false);
         }
       })
+
+
   },[])
 
   return (

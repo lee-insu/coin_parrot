@@ -20,7 +20,7 @@ const CoinSelect = ({coins}) => {
                 const selected = coins[Math.floor(Math.random() * coins.length)]
                 coinSelect(selected.korean_name);
                 getMarket(selected.market);
-            },2500)
+            },2000)
         }
 
         if(!coin) {

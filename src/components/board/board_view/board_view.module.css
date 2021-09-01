@@ -98,3 +98,15 @@
     background-color: #f7f7f7;
     color: rgb(82, 82, 82);
 }
+
+@media screen and (max-width: 480px) {
+
+.user_info {
+    display: inline;
+}
+
+.views {
+    margin-top: 0.4rem;
+}
+
+}

@@ -102,7 +102,7 @@ const BoardView = ({login, userInfo}) => {
                  <div className={style.user_info}>
                  <div className={style.info}>
                      <div className={style.name}>{user.name}님</div>
-                     <div className={style.time}>{!time.update ? time.time : `${time.update}수정됨` }</div>
+                     <div className={style.time}>{!time.update ? time.time : `${time.update}(수정)` }</div>
                  </div>
                       <div className={style.views}>조회수:{views}</div>
                 </div>
