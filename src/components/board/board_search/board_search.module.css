@@ -1,3 +1,13 @@
+input {
+    appearance: none; 
+    -moz-appearance: none; 
+    -webkit-appearance: none; 
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+
 .form {
     width: 100%;
     margin: 0 auto;
@@ -10,8 +20,7 @@
     border: solid 1px rgb(117, 117, 117);
     margin-right: 0.5rem;
     border-radius: 3px;
-    -webkit-border: solid 1px rgb(117, 117, 117);
-    -webkit-border-radius: 3px;
+
   
 }
 
@@ -21,9 +30,7 @@
     padding: 0.3rem;
     color: #fff;
     border-radius: 3px;
-    -webkit-background-color: #c9c9c9;
-    -webkit-padding: 0.3rem;
-    -webkit-border-radius: 3px;
+
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
 
