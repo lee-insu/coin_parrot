@@ -1,3 +1,13 @@
+input {
+    appearance: none; 
+    -moz-appearance: none; 
+    -webkit-appearance: none; 
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+
 .session {
     width: 100%;
     margin: 0 auto;
