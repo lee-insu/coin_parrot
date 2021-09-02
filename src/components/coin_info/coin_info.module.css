@@ -1,7 +1,7 @@
 .session {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;
     margin: 0 auto;
     text-align: center;
 }
@@ -9,7 +9,9 @@
 .coin_select {
     position: relative;
     width: 100%;
-    height: 55vh;
+    height: auto;
+    display: block;
+    margin-bottom: 1.5rem;
 }
 
 .coin_roulette {
@@ -27,6 +29,7 @@
     width: 100%;
     height: 80px;
     background-color: rgb(119, 119, 119);
+    display: block;
 }
 
 
