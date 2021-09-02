@@ -32,6 +32,8 @@
     border: solid 1px rgb(156, 156, 156);
     padding: 0.3rem;
     border-radius: 6px;
+    -webkit-border: solid 1px rgb(156, 156, 156);
+    -webkit-border-radius: 6px;
 }
 
 .button {
@@ -44,5 +46,7 @@
     background-color: #5797FF;
     padding: 0.3rem 0rem;
     border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -webkit-background-color: #5797FF;
 }
 
