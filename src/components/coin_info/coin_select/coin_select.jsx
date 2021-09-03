@@ -51,7 +51,6 @@ const CoinSelect = ({coins}) => {
                 getChangeRate((coin.signed_change_rate*100).toFixed(2))
             });
         })
-
     }
 
 

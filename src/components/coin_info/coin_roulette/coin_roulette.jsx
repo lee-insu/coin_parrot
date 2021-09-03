@@ -67,8 +67,14 @@ const CoinRoulette = () => {
             setMustSpin(false)
           }}
         />
+        {!mustSpin ? 
+           <>
             <button className={styles.button_roulette} onClick={handleSpinClick}>돌리기</button>
             <button className={styles.button_roulette} onClick={()=>rouletteActive(false)}>다시 쓰기</button>
+            </>
+            :
+            null
+        }
         </div>
         <div className={styles.option}>{!mustSpin ? data[prizeNumber].option : null}</div>
         </>
