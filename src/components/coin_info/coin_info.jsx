@@ -24,7 +24,6 @@ const CoinInfo = () => {
 
 
 
-
     return (
         <div className={styles.session}>
         <div className={styles.coin_select}><CoinSelect coins ={coins}/></div>
