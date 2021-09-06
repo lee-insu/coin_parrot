@@ -41,6 +41,7 @@ input {
     border: solid 1px rgb(156, 156, 156);
     padding: 0.3rem;
     border-radius: 6px;
+    
 }
 
 .button {
@@ -53,6 +54,8 @@ input {
     background-color: #5797FF;
     padding: 0.3rem 0rem;
     border-radius: 6px;
+
+
 }
 
 .google {

@@ -20,6 +20,8 @@ input {
     border: solid 1px rgb(117, 117, 117);
     margin-right: 0.5rem;
     border-radius: 3px;
+
+  
 }
 
 .btn {
@@ -28,6 +30,7 @@ input {
     padding: 0.3rem;
     color: #fff;
     border-radius: 3px;
+
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
 
