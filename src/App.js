@@ -12,6 +12,7 @@ import SignIn from './components/header/sign_in/sign_in';
 import SignUp from './components/header/sign_up/sign_up';
 import { firebaseAuth } from './service/firebase';
 import ReactGA from 'react-ga';
+import SearchResult from './components/board/board_search/search_result/search_result';
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
           <Route exact path ='/board/write' component={()=><BoardWrite userInfo={userInfo}/>}/>
           <Route exact path = '/board/:id'  component={()=><BoardView login={login} userInfo={userInfo}/>}/>
           <Route exact path ='/board/:id/edit' component={BoardEdit}/>
+          <Route exact path ='/board/:word/search' component={()=><SearchResult/>}/>
       </Switch>
     </BrowserRouter>
     </div>

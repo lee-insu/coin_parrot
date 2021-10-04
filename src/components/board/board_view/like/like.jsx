@@ -10,20 +10,20 @@ const Like = ({login,userInfo}) => {
     const [likeNum,getLikeNum] = useState('');
     const params = useParams();
 
-    const store = firestore.collection('board').doc(`${params.id}`).collection('like').doc(`${userInfo.uid}`);
-    const storeLike = firestore.collection('board').doc(`${params.id}`).collection('like');
+    const fistore = firestore.collection('board').doc(`${params.id}`).collection('like').doc(`${userInfo.uid}`);
+    const fiStoreLike = firestore.collection('board').doc(`${params.id}`).collection('like');
 
     const increaseLike = async(e) => {
         e.preventDefault();
         if (login) {
             if(!like) {
-                await store.set({
+                await fistore.set({
                     like:true,
                     uid:userInfo.uid
                 })
                 setLike(true);
             }else{
-                await store.delete();
+                await fistore.delete();
                 setLike(false);
             }
         }else{
@@ -32,7 +32,7 @@ const Like = ({login,userInfo}) => {
     }
 
     if(userInfo) {
-        storeLike.get().then(result => {
+        fiStoreLike.get().then(result => {
             result.forEach(doc => {
                 if(doc.id === userInfo.uid){
                     setLike(true);
@@ -43,7 +43,7 @@ const Like = ({login,userInfo}) => {
 
     useEffect(()=> {
         if(like || !like){
-            storeLike.get().then(snap => {
+            fiStoreLike.get().then(snap => {
                 let count = snap.size;
                 getLikeNum(count);
             })

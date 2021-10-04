@@ -1,33 +1,24 @@
-import React, { useState } from 'react';
-import { firestore } from '../../../service/firebase';
-import SearchResult from './search_result/search_result';
+import React from 'react';
 import style from './board_search.module.css';
+import { connect } from 'react-redux';
+import { searchData } from '../../../service/store';
+import { useHistory } from 'react-router-dom';
 
-const BoardSearch = () => {
-    
-    const [search,setSearch] = useState('');
-    const [result,getResult] = useState('');
+const BoardSearch = ({word,searchData}) => {
+
+    const history = useHistory();
+
 
     const onChange = e => {
         const value = e.target.value;
-        setSearch(value);
+        searchData(value);
     }
 
- 
 
     const onSubmit = async(e) => {
         e.preventDefault();
-        await firestore.collection("board").where("title",">=",search).where("title","<=",search + "\uf8ff")
-        .onSnapshot(snapshot => {
-            const array = snapshot.docs.map(doc => ({
-                id:doc.id,
-                ...doc.data()
-            }))
-                getResult(array)
-        })
+        history.push(`/board/${Object.values(word)}/search`);
     }
-
-
 
     return (
         <>
@@ -35,18 +26,26 @@ const BoardSearch = () => {
             <input 
             className={style.search}
             type="text"
-            value={search}
             onChange={onChange}
             placeholder="찾고 싶은 제목을 입력하세요"
             required
             />
             <input className={style.btn} type="submit" value="검색"/>
         </form>
-        <SearchResult search = {result} />
         </>
 
        
     )
-}
+}   
 
-export default BoardSearch;
+    const mapStateToProps = (state,props) => {
+        return {word:state}
+    }
+
+    const mapDispatchToProps = (dispatch) => {
+        return {
+            searchData:(text) => dispatch(searchData(text))
+        }
+    }
+
+export default connect(mapStateToProps,mapDispatchToProps) (BoardSearch);

@@ -23,7 +23,7 @@ const BoardView = ({login, userInfo}) => {
     const params = useParams();
     const history = useHistory();
 
-    const store = firestore.collection('board').doc(`${params.id}`)
+    const fistore = firestore.collection('board').doc(`${params.id}`)
     const comment = firestore.collection('comments').doc(`${params.id}`).collection('comment');
 
 
@@ -46,7 +46,7 @@ const BoardView = ({login, userInfo}) => {
     const onDelete = async() => {
         const del = window.confirm('정말로 글을 삭제하고 싶습니까?');
         if(del) {
-            await store.delete();
+            await fistore.delete();
             if(del) {
                 comment.get().then(cmt => {
                     const size = cmt.size;
@@ -71,12 +71,12 @@ const BoardView = ({login, userInfo}) => {
 
 
     useEffect(()=> {
-        store.update({
+        fistore.update({
             views:increment
         })
 
 
-        store.get().then(result=> {
+        fistore.get().then(result=> {
             const data = result.data();
             getTitle(data.title);
             getContent(data.content);

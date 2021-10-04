@@ -23,7 +23,7 @@ const Board = ({login}) => {
         }
     }
 
-    const store = firestore.collection("board").orderBy('time','desc');
+    const fistore = firestore.collection("board").orderBy('time','desc');
  
 
     const onSnapshotState = snapshot => {
@@ -47,7 +47,7 @@ const Board = ({login}) => {
 
     const fetchMore = () => {
         setLoading(true);
-        store.startAfter(lastDoc).limit(15)
+        fistore.startAfter(lastDoc).limit(15)
         .onSnapshot(snapshot =>{
             onSnapshotState(snapshot);
         })
@@ -55,7 +55,7 @@ const Board = ({login}) => {
 
 
     useEffect(()=> {
-        store.limit(15)
+        fistore.limit(15)
         .onSnapshot(snapshot => {
            onSnapshotState(snapshot);
         })

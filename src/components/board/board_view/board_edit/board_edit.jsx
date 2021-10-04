@@ -10,12 +10,12 @@ const BoardEdit = () => {
     const params = useParams();
     const history = useHistory();
 
-    const store = firestore.collection('board').doc(`${params.id}`)
+    const fistore = firestore.collection('board').doc(`${params.id}`)
 
 
     const onSubmit = async(e) => {
         e.preventDefault();
-        await store.update({
+        await fistore.update({
             title:title,
             content:content,
             update:`${new Date().getFullYear()}년 ${new Date().getMonth()+1}월 ${new Date().getDate()}일 ${new Date().getHours()}시 ${new Date().getMinutes()}분 `
@@ -39,7 +39,7 @@ const BoardEdit = () => {
 
 
     useEffect(()=> {
-        store.get().then(result => {
+        fistore.get().then(result => {
             const data = result.data();
             getTitle(data.title);
             getContent(data.content);

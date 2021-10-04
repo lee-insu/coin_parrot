@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { firestore } from '../../../../service/firebase';
 import style from './search_result.module.css';
 
-const SearchResult = ({search}) => {
+const SearchResult = ({word}) => {
+    
+    const [search,setSearch] = useState('')
+    const searchWord = Object.values(word).[0];
+   
 
+
+    useEffect(()=> {
+            firestore.collection('board').where('title',">=",searchWord)
+            .where("title","<=",searchWord + "\uf8ff")
+            .onSnapshot(snapshot => {
+                const array = snapshot.docs.map(doc => ({
+                    id:doc.id,
+                    ...doc.data()
+                }))
+                setSearch(array);
+            })
+
+    },[])
+
+  
 
     let resultArray;
     if(search) {
@@ -30,10 +51,19 @@ const SearchResult = ({search}) => {
 
 
     return (
-        <ul>
-            {resultArray}
-        </ul>
+        <div className={style.session}>
+         <ul className={style.ul}>
+             {resultArray}
+         </ul>
+        </div>
     );
 };
 
-export default SearchResult;
+
+    const mapStateToProps = (state) => {
+        return {
+            word:state
+        }
+    };
+
+export default connect(mapStateToProps) (SearchResult);

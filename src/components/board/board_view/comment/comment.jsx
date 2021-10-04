@@ -6,7 +6,7 @@ const Comment = ({params,userInfo}) => {
 
     const [write,setWrite] = useState('');
     const [comments,setComments] = useState([]);
-    const store = firestore.collection("comments").doc(params).collection("comment");
+    const fistore = firestore.collection("comments").doc(params).collection("comment");
 
     const onChange = e => {
         const value = e.target.value;
@@ -17,7 +17,7 @@ const Comment = ({params,userInfo}) => {
         e.preventDefault();
         try{
             alert('댓글 작성 완료!');
-            await store.add({
+            await fistore.add({
                 comment:write,
                 name:userInfo.displayName,
                 uid:userInfo.uid,
@@ -34,7 +34,7 @@ const Comment = ({params,userInfo}) => {
         if(cmtUid === userInfo.uid) {
             const del = window.confirm('댓글을 삭제하겠습니까?');
             if(del) {
-                await store.doc(cmtId).delete();
+                await fistore.doc(cmtId).delete();
             }
         }else{
             alert('댓글 작성자가 아닙니다');
@@ -43,7 +43,7 @@ const Comment = ({params,userInfo}) => {
 
 
     useEffect(()=> {
-        store.orderBy('time')
+        fistore.orderBy('time')
         .onSnapshot(snapshot => {
             const array = snapshot.docs.map(doc => ({
                 id:doc.id,
