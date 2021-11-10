@@ -4,12 +4,12 @@ import styles from './coin_chart.module.css';
 const CoinChart = () => {
         
     const [coin,getCoin] =useState(false);
-    const coinList = 'krw-btc,krw-eth,krw-ada,krw-xrp,krw-doge,krw-dot,btc-luna'
+    const coinList = 'krw-btc,krw-eth,krw-ada,krw-xrp,krw-sol,krw-dot,btc-luna'
     const [btc,getBtc] = useState();
     const [eth,getEth] = useState();
     const [ada,getAda] = useState();
     const [xrp,getXrp] = useState();
-    const [doge,getDoge] = useState();
+    const [sol,getSol] = useState();
   
 
 
@@ -24,7 +24,7 @@ const CoinChart = () => {
                 getEth(array[1]);
                 getAda(array[2]);
                 getXrp(array[3]);
-                getDoge(array[4]);
+                getSol(array[4]);
                 getCoin(true)
             })
         },2000)
@@ -69,10 +69,10 @@ const CoinChart = () => {
                         {(xrp.signed_change_rate*100).toFixed(2)}</th>
                 </tr>
                 <tr>
-                    <th>도지코인</th>
-                    <th>{doge.trade_price}</th>
-                    <th className={(doge.signed_change_rate*100).toFixed(2) >= 0 ? styles.changeRate : styles.changeRate_u}>
-                        {(doge.signed_change_rate*100).toFixed(2)}</th>
+                    <th>솔라나</th>
+                    <th>{sol.trade_price}</th>
+                    <th className={(sol.signed_change_rate*100).toFixed(2) >= 0 ? styles.changeRate : styles.changeRate_u}>
+                        {(sol.signed_change_rate*100).toFixed(2)}</th>
                 </tr>
              
                 </>

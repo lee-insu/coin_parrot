@@ -5,7 +5,7 @@ import CoinRoulette from './coin_roulette/coin_roulette';
 import CoinSelect from './coin_select/coin_select';
 import styles from './coin_info.module.css';
 import Footer from '../footer/footer';
-import Ad from '../ad';
+import {Ad} from '../ad';
 
 const CoinInfo = () => {
 

@@ -5,7 +5,7 @@ import firebase from 'firebase/app';
 import Comment from './comment/comment';
 import Like from './like/like';
 import style from './board_view.module.css';
-import Ad from '../../ad';
+import {Ad} from '../../ad';
 
 const BoardView = ({login, userInfo}) => {
 

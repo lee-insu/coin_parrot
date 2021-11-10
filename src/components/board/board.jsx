@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { firestore } from '../../service/firebase';
 import style from './board.module.css';
 import BoardSearch from './board_search/board_search';
-import Ad from '../ad';
+import {Ad} from '../ad';
 
 const Board = ({login}) => {
 
