@@ -25,8 +25,6 @@ function App() {
   useEffect(()=> {
       ReactGA.initialize(process.env.REACT_APP_GA);
       ReactGA.pageview(window.location.pathname + window.location.search);
-   
-
       firebaseAuth.onAuthStateChanged(user => {
         if(user) {
           getUserInfo(user);
@@ -35,6 +33,18 @@ function App() {
           getLogin(false);
         }
       })
+
+      let ins = document.createElement('ins');
+      let scr = document.createElement('script');
+
+        ins.className = 'kakao_ad_area';
+        ins.style = "display:none; width:100%;";
+        scr.async = 'true';
+        scr.type = "text/javascript";
+        scr.src = "//t1.daumcdn.net/kas/static/ba.min.js";
+        ins.setAttribute('data-ad-width', '320');
+        ins.setAttribute('data-ad-height', '100');
+        ins.setAttribute('data-ad-unit', 'DAN-2uCko65PyapmFKN4');
 
 
   },[])

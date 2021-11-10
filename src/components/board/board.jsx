@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { firestore } from '../../service/firebase';
 import style from './board.module.css';
 import BoardSearch from './board_search/board_search';
+import Ad from '../ad';
 
 const Board = ({login}) => {
 
@@ -78,7 +79,7 @@ const Board = ({login}) => {
     
     return (
         <div className={style.session}>
-        <div className={style.ad}>ad</div>
+        <Ad/>
         <ul>{boards}</ul>
         {loading ? <div className={style.more}>글을 불러오고 있습니다..</div> : null}
         {isEmpty ? <div className={style.more}>불러올 글이 없습니다</div>:<button className={style.more_btn} onClick={fetchMore}>더보기</button>}

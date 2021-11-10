@@ -5,22 +5,14 @@ import CoinRoulette from './coin_roulette/coin_roulette';
 import CoinSelect from './coin_select/coin_select';
 import styles from './coin_info.module.css';
 import Footer from '../footer/footer';
+import Ad from '../ad';
 
 const CoinInfo = () => {
 
     const [coins,getCoins] =useState();
 
-
-    
-    // let ins = document.createElement('ins');
-    //     ins.className = 'kakao_ad_area';
-    //     ins.style = "display:none; width:100%;";
-    //     ins.setAttribute('data-ad-width', '320');
-    //     ins.setAttribute('data-ad-height', '100');
-    //     ins.setAttribute('data-ad-unit', 'DAN-2uCko65PyapmFKN4');
     
     useEffect(()=> {
-    
         fetch('https://api.upbit.com/v1/market/all')
         .then(res => res.json())
         .then(async res => {
@@ -37,16 +29,12 @@ const CoinInfo = () => {
 
     return (
         <div className={styles.session}>
-            {/* <div>
-                <Helmet>
-                <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-                </Helmet>
-            </div> */}
         <div className={styles.coin_select}><CoinSelect coins ={coins}/></div>
+        <Ad/>
         <div className={styles.coin_roulette}><CoinRoulette /></div>
+        <Ad/>
         <div className={styles.coin_chart}> <CoinChart /></div>
         <Footer/>
-
         </div>
     );
 };

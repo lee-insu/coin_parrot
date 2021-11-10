@@ -5,6 +5,7 @@ import firebase from 'firebase/app';
 import Comment from './comment/comment';
 import Like from './like/like';
 import style from './board_view.module.css';
+import Ad from '../../ad';
 
 const BoardView = ({login, userInfo}) => {
 
@@ -96,7 +97,7 @@ const BoardView = ({login, userInfo}) => {
     return(
 
         <div className={style.session}>
-            <div className={style.ad}>ad</div>
+            <Ad/>
             <div className={style.content_info}>
                  <div className={style.title}>{title}</div>
                  <div className={style.user_info}>
